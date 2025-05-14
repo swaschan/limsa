@@ -1,0 +1,26 @@
+{
+  "name": "lll_website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "serve": "npx eleventy --serve && npx prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@tailwindcss/postcss": "^4.1.6",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.3",
+    "prettier": "3.5.3",
+    "tailwindcss": "^4.1.6"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^5.0.35"
+  }
+}
