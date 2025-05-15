@@ -3,75 +3,77 @@
 {% block title %}Louisoix Limsan Lominsans{% endblock %}
 
 {% block content %}
-<main class="container mx-auto px-4 py-32">
-  <div class="">
-    <h1 class="text-7xl text-center font-header font-bold">Louisoix Limsan Lominsans</h1>
-    <h3 class="text-3xl text-center font-header py-4 font-light">A Mare Syncshell for the denizens of Limsa Lominsa on
+<main class="flex h-full items-center-safe w-full flex-col lg:flex-row">
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center text-left pl-40 pr-20">
+    <h1 class="text-9xl font-header font-black text-left uppercase title">Louisoix Limsan Lominsans
+    </h1>
+    <h3 class="text-5xl font-header py-4 font-light text-left">A Mare Syncshell for the denizens of Limsa Lominsa on
       Louisoix.</h3>
   </div>
-  <div class="divider"></div>
-  <div tabindex="0" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-    <div class="collapse-title font-semibold">What's a syncshell?</div>
-    <div class="collapse-content">
-      <p class="font-light text-2xl">
-        A syncshell allows players to sync their <span class="font-medium">modded</span> appearance to others within
-        said syncshell seamlessly. For more details on setting up Mare, please visit
-        https://reniguide.carrd.co/#whatismare, and make sure all requisites are installed.
-      </p>
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center">
+    <div tabindex="0" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
+      <div class="collapse-title font-semibold">What's a syncshell?</div>
+      <div class="collapse-content">
+        <p class="font-light text-2xl">
+          A syncshell allows players to sync their <span class="font-medium">modded</span> appearance to others within
+          said syncshell seamlessly. For more details on setting up Mare, please visit
+          https://reniguide.carrd.co/#whatismare, and make sure all requisites are installed.
+        </p>
+      </div>
     </div>
-  </div>
-  <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-    <div class="collapse-title font-semibold">How do I join the syncshell?</div>
-    <div class="collapse-content">
-      <p class="font-light text-2xl">
-        We have a handful of moderators that are online at various times throughout the day. You can ask for an invite
-        by
-        sending a tell to any of the moderators, though keep in mind that invites are at their discretion only.
-        Currently,
-        the moderators are:
-      </p>
-      <ul class="list bg-base-100 rounded-box shadow-md my-4">
-        {%- for mods in collections.mods | sort(attribute="data.title") -%}
-        <li class="list-row">
-          <div><img class="size-14 btn-circle" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-          <div class="">
-            <div class="text-2xl font-semibold">{{ mods.data.title }}</div>
-            <div class="text-xl font-light opacity-60">{{ mods.data.caption }}</div>
-          </div>
-        </li>
-        {%- endfor -%}
-      </ul>
+    <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
+      <div class="collapse-title font-semibold">How do I join the syncshell?</div>
+      <div class="collapse-content">
+        <p class="font-light text-2xl">
+          We have a handful of moderators that are online at various times throughout the day. You can ask for an invite
+          by
+          sending a tell to any of the moderators, though keep in mind that invites are at their discretion only.
+          Currently,
+          the moderators are:
+        </p>
+        <ul class="list bg-base-100 rounded-box shadow-md my-4">
+          {%- for mods in collections.mods | sort(attribute="data.title") -%}
+          <li class="list-row">
+            <div><img class="size-14 btn-circle" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
+            <div class="">
+              <div class="text-2xl font-semibold">{{ mods.data.title }}</div>
+              <div class="text-xl font-light opacity-60">{{ mods.data.caption }}</div>
+            </div>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
     </div>
-  </div>
-  <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-    <div class="collapse-title font-semibold">Rules</div>
-    <div class="collapse-content font-light text-2xl">
-      By joining the syncshell, you agree to abide by the following rules:
-      <ul class="list bg-base-100 rounded-box shadow-md py-4">
-        <li class="list-row">
-          <div class="text-5xl font-thin opacity-30 tabular-nums self-center">01</div>
-          <div class="list-col-grow">
-            <div class="text-2xl">No harassment or hate speech.</div>
-            <div class="text-xs uppercase font-semibold opacity-60">pls</div>
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-5xl font-thin opacity-30 tabular-nums self-center">02</div>
-          <div class="list-col-grow">
-            <div class="text-2xl">Respect the privacy of others</div>
-            <div class="text-xs uppercase font-semibold opacity-60">pls </div>
-          </div>
-        </li>
+    <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
+      <div class="collapse-title font-semibold">Rules</div>
+      <div class="collapse-content font-light text-2xl">
+        By joining the syncshell, you agree to abide by the following rules:
+        <ul class="list bg-base-100 rounded-box shadow-md py-4">
+          <li class="list-row">
+            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">01</div>
+            <div class="list-col-grow">
+              <div class="text-2xl">No harassment or hate speech.</div>
+              <div class="text-xs uppercase font-semibold opacity-60">pls</div>
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">02</div>
+            <div class="list-col-grow">
+              <div class="text-2xl">Respect the privacy of others</div>
+              <div class="text-xs uppercase font-semibold opacity-60">pls </div>
+            </div>
+          </li>
 
-        <li class="list-row">
-          <div class="text-5xl font-thin opacity-30 tabular-nums self-center">03</div>
-          <div class="list-col-grow">
-            <div class="text-2xl">Follow the instructions of the moderators</div>
-            <div class="text-xs uppercase font-semibold opacity-60">triple caution</div>
-          </div>
-        </li>
+          <li class="list-row">
+            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">03</div>
+            <div class="list-col-grow">
+              <div class="text-2xl">Follow the instructions of the moderators</div>
+              <div class="text-xs uppercase font-semibold opacity-60">triple caution</div>
+            </div>
+          </li>
 
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </main>
