@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: luxury --default;
+}
+@theme {
+  --font-header: "Outfit", "sans-serif";
 }
