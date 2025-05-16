@@ -1,7 +1,7 @@
 ---
 tags: mods
-title: "Swassie Ojin"
-caption: "HoF"
+title: "Toni Notford"
+caption: "OMEN"
 image: 'assets/images/swassie.png'
 role: 'crown'
 ---

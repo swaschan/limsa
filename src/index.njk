@@ -3,22 +3,22 @@
 {% block title %}Louisoix Limsan Lominsans{% endblock %}
 
 {% block content %}
-<main class="flex h-full items-center-safe w-full flex-col lg:flex-row">
-  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center text-left pl-40 pr-20 bg-[url(/assets/images/backgrounds/hero_bg2.png)] bg-cover">
-    <h1 class="text-9xl font-header font-black text-left uppercase title">Louisoix Limsan Lominsans
+<main class="flex lg:h-full items-center-safe lg:w-full flex-col lg:flex-row">
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center text-left mt-16 lg:mt-0 px-12 lg:pl-40 lg:px-20 bg-[url(/assets/images/backgrounds/hero_bg2.png)] bg-cover">
+    <h1 class="text-5xl lg:text-9xl font-header font-semibold lg:font-black text-center lg:text-left lg:uppercase title">Louisoix Limsan Lominsans
     </h1>
-    <h2 class="text-5xl font-header py-4 font-light text-left">A Mare Syncshell for the denizens of Limsa Lominsa on
+    <h2 class="text-2xl lg:text-5xl font-header py-4 font-light text-center lg:text-left">A Mare Syncshell for the denizens of Limsa Lominsa on
       Louisoix.</h3>
   </div>
-  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center px-24">
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center px-10 lg:px-0 lg:pr-24">
     <div tabindex="0" class="collapse collapse-arrow bg-base-100 border border-base-300 text-2xl px-4 py-2 font-header my-4">
        <input type="radio" name="accordion" checked="checked" />
       <div class="font-semibold collapse-title">What's a syncshell?</div>
       <div class="collapse-content">
-        <p class="font-light text-2xl">
+        <p class="font-light text-xl lg:text-2xl">
           A syncshell allows players to sync their <span class="font-medium">modded</span> appearance to others within
           said syncshell seamlessly. For more details on setting up Mare, please visit
-          <a href="https://reniguide.carrd.co/#whatismare" target="_blank">https://reniguide.carrd.co/#whatismare</a>, and make sure all requisites are installed.
+          <a href="https://reniguide.carrd.co/#whatismare" target="_blank" class="inline-flex items-center text-neutral-content font-mono hover:underline">https://reniguide.carrd.co/#whatismare</a>. Make sure all prerequisites (Penumbra, Glamourer, etc) are installed prior to Mare - information on how to set those up is also available on the linked guide.
         </p>
       </div>
     </div>
@@ -26,20 +26,28 @@
       <input type="radio" name="accordion" />
       <div class="font-semibold collapse-title">How do I join the syncshell?</div>
       <div class="collapse-content">
-        <p class="font-light text-2xl">
-          We have a handful of moderators that are online at various times throughout the day. You can ask for an invite
-          by
-          sending a tell to any of the moderators, though keep in mind that invites are at their discretion only.
+        <p class="font-light text-xl lg:text-2xl">
+          Please reach out to one of the moderators in-game to get an invite link. Keep in mind invites are purely at the discretion of the moderators.
           Currently,
           the moderators are:
         </p>
         <ul class="list rounded-box shadow-md my-4">
           {%- for mods in collections.mods | sort(attribute="data.title") -%}
-          <li class="list-row">
-            <div><img class="size-14 btn-circle" src="https://img.daisyui.com/images/profile/demo/1@94.webp" alt="pp" /></div>
-            <div class="">
-              <div class="text-2xl font-semibold">{{ mods.data.title }}</div>
-              <div class="text-xl font-light opacity-60">{{ mods.data.caption }}</div>
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="self-center">
+            {%- if mods.data.image -%}
+              <img class="size-10 lg:size-14 btn-circle self-center border-1 lg:border-2" src='{{ mods.data.image | url}}' alt="pp" />
+            {%- else -%}
+              <img class="size-10 lg:size-14 btn-circle self-center border-1 lg:border-2" src="{{ '/assets/images/default.jpg' | url }}" alt="pp" />
+            {%- endif -%}
+</div>
+            <div class="flex flex-col lg:flex-row justify-start self-center">
+              <div class="text-xl lg:text-2xl font-semibold">{{ mods.data.title }}</div>
+              <div class="text-md font-medium opacity-100 text-[#d0ba96] flex align-center bg-base-200 w-fit pr-2 p-1  mt-1 lg:mt-0 rounded-lg lg:ml-3">
+                <i data-lucide="{{ mods.data.role}}" class="fill-[#d0ba96] h-4 self-center"></i>
+                <span class="self-center">{{ mods.data.caption }}
+                </span>
+                </div>
             </div>
           </li>
           {%- endfor -%}
@@ -49,33 +57,55 @@
     <div tabindex="0" class="collapse collapse-arrow bg-base-100 border border-base-300 text-2xl px-4 py-2 font-header my-4">
       <input type="radio" name="accordion" />
       <div class="font-semibold collapse-title">Rules</div>
-      <div class=" font-light text-2xl collapse-content">
+      <div class=" font-light text-xl lg:text-2xl collapse-content">
         By joining the syncshell, you agree to abide by the following rules:
         <ul class="list bg-base-100 rounded-box shadow-md py-4">
-          <li class="list-row">
-            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">01</div>
-            <div class="list-col-grow">
-              <div class="text-2xl">No harassment or hate speech.</div>
-              <div class="text-xs uppercase font-semibold opacity-60">pls</div>
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums lg:self-center">01</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">No public sexual activities.</div>
             </div>
           </li>
-          <li class="list-row">
-            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">02</div>
-            <div class="list-col-grow">
-              <div class="text-2xl">Respect the privacy of others</div>
-              <div class="text-xs uppercase font-semibold opacity-60">pls </div>
-            </div>
-          </li>
-
-          <li class="list-row">
-            <div class="text-5xl font-thin opacity-30 tabular-nums self-center">03</div>
-            <div class="list-col-grow">
-              <div class="text-2xl">Follow the instructions of the moderators</div>
-              <div class="text-xs uppercase font-semibold opacity-60">triple caution</div>
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums lg:self-center">02</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">No racism, homophobia, transphobia. Don't be a dick to others.</div>
             </div>
           </li>
 
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums lg:self-center">03</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">Absolutely no NSFW depictions of minors, underage characters or Lalafells.</div>
+            </div>
+          </li>
+
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums lg:self-center">04</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">Please refrain from spamming obnoxious visual effects or seizure inducing visuals.</div>
+
+            </div>
+          </li>
+          <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums lg:self-center">05</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">Do not clone other members' appearances and private mods without their explicit consent.</div>
+            </div>
+          </li>
+           <li class="list-row p-0 py-2 lg:px-4 lg:py-4">
+            <div class="text-3xl font-thin opacity-60 tabular-nums ">06</div>
+            <div class="list-col-grow self-center">
+              <div class="text-xl lg:text-2xl">Try to keep your char's VRAM usage to ideally <b>below 300 MB, and 200,000 triangles.</b> Characters using excessive VRAM (>375MB) for significant periods of time will be asked to compress their mods. </div>
+              <div class="text-lg">
+                A great guide to optimize your VRAM usage can be found here:
+                <a href="https://reniguide.carrd.co/#mareoptimize" target="_blank" class="inline-flex items-center text-neutral-content font-mono hover:underline">https://reniguide.carrd.co/#mareoptimize</a>
+              </div>
+
+            </div>
+          </li>
         </ul>
+        Failure to comply with these rules may result in a temporary or permanent ban from the syncshell.
       </div>
     </div>
   </div>

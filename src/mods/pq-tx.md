@@ -1,5 +1,6 @@
 ---
 tags: mods
-title: Pq Tx
-caption: Enjoys poking.
+title: "Pq Tx"
+caption: "GSG"
+role: 'crown'
 ---

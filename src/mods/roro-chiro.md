@@ -1,5 +1,6 @@
 ---
 tags: mods
-title: Roro Chiro
-caption: Lolorito's cousin.
+title: "Roro Chiro"
+caption: "Frost"
+role: 'crown'
 ---

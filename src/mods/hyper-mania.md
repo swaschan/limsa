@@ -1,5 +1,6 @@
 ---
 tags: mods
-title: Hyper Mania
-caption: Bully.
+title: "Hyper Mania"
+caption: "Bzzz"
+role: 'crown'
 ---

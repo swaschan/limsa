@@ -5,6 +5,8 @@ import cssnano from 'cssnano';
 import postcss from 'postcss';
 import tailwindcss from '@tailwindcss/postcss';
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import markdownIt from "markdown-it";
+import { RenderPlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
   //compile tailwind before eleventy processes the files
@@ -27,9 +29,20 @@ export default function (eleventyConfig) {
 
     fs.writeFileSync(tailwindOutputPath, result.css);
   });
+  //Define options for markdown-it
+  let options = {
+		html: true,
+		breaks: true,
+		linkify: true,
+	};
+  //Add markdown-it as a library
+  eleventyConfig.setLibrary("md", markdownIt(options));
 
+//Add eleventy-image plugin
  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+ eleventyConfig.addPlugin(RenderPlugin);
 
+ //PostCSS processor
   const processor = postcss([
     //compile tailwind
     tailwindcss(),
@@ -43,7 +56,11 @@ export default function (eleventyConfig) {
     
   ]);
 
+  //Copy background images to the dist folder
   eleventyConfig.addPassthroughCopy("./src/assets/images/backgrounds");
+
+  
+  //Set input and output directories
   return {
     dir: { input: 'src', output: 'dist' },
   };
