@@ -4,6 +4,7 @@ import path from 'path';
 import cssnano from 'cssnano';
 import postcss from 'postcss';
 import tailwindcss from '@tailwindcss/postcss';
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
   //compile tailwind before eleventy processes the files
@@ -27,6 +28,8 @@ export default function (eleventyConfig) {
     fs.writeFileSync(tailwindOutputPath, result.css);
   });
 
+ eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+
   const processor = postcss([
     //compile tailwind
     tailwindcss(),
@@ -35,8 +38,12 @@ export default function (eleventyConfig) {
     cssnano({
       preset: 'default',
     }),
+
+    
+    
   ]);
 
+  eleventyConfig.addPassthroughCopy("./src/assets/images/backgrounds");
   return {
     dir: { input: 'src', output: 'dist' },
   };

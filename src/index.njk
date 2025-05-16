@@ -4,25 +4,27 @@
 
 {% block content %}
 <main class="flex h-full items-center-safe w-full flex-col lg:flex-row">
-  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center text-left pl-40 pr-20">
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center text-left pl-40 pr-20 bg-[url(/assets/images/backgrounds/hero_bg2.png)] bg-cover">
     <h1 class="text-9xl font-header font-black text-left uppercase title">Louisoix Limsan Lominsans
     </h1>
-    <h3 class="text-5xl font-header py-4 font-light text-left">A Mare Syncshell for the denizens of Limsa Lominsa on
+    <h2 class="text-5xl font-header py-4 font-light text-left">A Mare Syncshell for the denizens of Limsa Lominsa on
       Louisoix.</h3>
   </div>
-  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center">
-    <div tabindex="0" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-      <div class="collapse-title font-semibold">What's a syncshell?</div>
+  <div class="flex grow-1 basis-1/2 h-full flex-col justify-center px-24">
+    <div tabindex="0" class="collapse collapse-arrow bg-base-100 border border-base-300 text-2xl px-4 py-2 font-header my-4">
+       <input type="radio" name="accordion" checked="checked" />
+      <div class="font-semibold collapse-title">What's a syncshell?</div>
       <div class="collapse-content">
         <p class="font-light text-2xl">
           A syncshell allows players to sync their <span class="font-medium">modded</span> appearance to others within
           said syncshell seamlessly. For more details on setting up Mare, please visit
-          https://reniguide.carrd.co/#whatismare, and make sure all requisites are installed.
+          <a href="https://reniguide.carrd.co/#whatismare" target="_blank">https://reniguide.carrd.co/#whatismare</a>, and make sure all requisites are installed.
         </p>
       </div>
     </div>
-    <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-      <div class="collapse-title font-semibold">How do I join the syncshell?</div>
+    <div tabindex="0" class="collapse collapse-arrow bg-base-100 border border-base-300 text-2xl px-4 py-2 font-header my-4">
+      <input type="radio" name="accordion" />
+      <div class="font-semibold collapse-title">How do I join the syncshell?</div>
       <div class="collapse-content">
         <p class="font-light text-2xl">
           We have a handful of moderators that are online at various times throughout the day. You can ask for an invite
@@ -31,10 +33,10 @@
           Currently,
           the moderators are:
         </p>
-        <ul class="list bg-base-100 rounded-box shadow-md my-4">
+        <ul class="list rounded-box shadow-md my-4">
           {%- for mods in collections.mods | sort(attribute="data.title") -%}
           <li class="list-row">
-            <div><img class="size-14 btn-circle" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
+            <div><img class="size-14 btn-circle" src="https://img.daisyui.com/images/profile/demo/1@94.webp" alt="pp" /></div>
             <div class="">
               <div class="text-2xl font-semibold">{{ mods.data.title }}</div>
               <div class="text-xl font-light opacity-60">{{ mods.data.caption }}</div>
@@ -44,9 +46,10 @@
         </ul>
       </div>
     </div>
-    <div tabindex="1" class="collapse collapse-arrow bg-base-100 border-base-300 border text-2xl px-4 py-2 font-header">
-      <div class="collapse-title font-semibold">Rules</div>
-      <div class="collapse-content font-light text-2xl">
+    <div tabindex="0" class="collapse collapse-arrow bg-base-100 border border-base-300 text-2xl px-4 py-2 font-header my-4">
+      <input type="radio" name="accordion" />
+      <div class="font-semibold collapse-title">Rules</div>
+      <div class=" font-light text-2xl collapse-content">
         By joining the syncshell, you agree to abide by the following rules:
         <ul class="list bg-base-100 rounded-box shadow-md py-4">
           <li class="list-row">

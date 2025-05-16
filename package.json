@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx eleventy",
-    "serve": "npx eleventy --serve && npx prettier . --write"
+    "serve": "npx eleventy --serve"
   },
   "keywords": [],
   "author": "",
