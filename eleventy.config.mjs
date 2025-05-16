@@ -58,7 +58,7 @@ export default function (eleventyConfig) {
 
   //Copy background images to the dist folder
   eleventyConfig.addPassthroughCopy("./src/assets/images/backgrounds");
-
+  eleventyConfig.addPassthroughCopy({"./src/assets/favicons": "/" });
   
   //Set input and output directories
   return {
